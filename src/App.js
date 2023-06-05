@@ -8,7 +8,9 @@ function App() {
     <div className="App">
       <div className="wrapper">
         <Header/>
-        <Button text={'удалить'}/>
+      {/* <Button text={'удалить'}/>*/}
+        <Button outline>Кнопка1</Button>
+        <Button>Кнопка2</Button>
        {/* <div className="header">
           <div className="container">
             <div className="header__logo">
