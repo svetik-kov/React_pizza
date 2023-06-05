@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div className="wrapper">
         <Header/>
-        <Button/>
+        <Button text={'удалить'}/>
        {/* <div className="header">
           <div className="container">
             <div className="header__logo">
