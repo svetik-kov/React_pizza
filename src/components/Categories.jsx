@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-export class Categories  extends React.Component{
+/*export class Categories  extends React.Component{
     state={
         activeItems:3,
     };
@@ -27,21 +27,24 @@ export class Categories  extends React.Component{
            </div>
        );
    }
-}
+}*/
 
-/*export const Categories = ({items,onClick}) => {
-    console.log(items)
+export const Categories = ({items,onClick}) => {
+    const [activeItems,setActiveItems]=useState(null)
+    const onSelectItem=(index)=>{
+        setActiveItems(index)
+    }
     return (
         <div className="categories">
             <ul>
-                <li className="active">Все</li>
+                <li >Все</li>
                 {items.map((name,index)=> (
-                    <li
+                    <li className={activeItems===index?'active':''}
                         key={`${name}_${index}`}
-                        onClick={()=>onClick(name)}
+                        onClick={()=>onSelectItem(index)}
                     >{name}</li>))}
             </ul>
         </div>
     );
-};*/
+};
 
