@@ -1,16 +1,21 @@
-import Button from "./Button";
+import Button from "./components/Button";
 import './App.css';
-import Header from "./Header";
+import {Header} from "./components/Header";
+import {Categories} from "./components/Categories";
 
 
 function App() {
+
+  const onClickButtonHandler=()=>{
+    alert('11')
+  }
   return (
     <div className="App">
       <div className="wrapper">
         <Header/>
       {/* <Button text={'удалить'}/>*/}
-        <Button outline>Кнопка1</Button>
-        <Button>Кнопка2</Button>
+    {/*    <Button outline>Кнопка1</Button>
+        <Button onClick={onClickButtonHandler} test>Кнопка2</Button>*/}
        {/* <div className="header">
           <div className="container">
             <div className="header__logo">
@@ -61,7 +66,7 @@ function App() {
         <div className="content">
           <div className="container">
             <div className="content__top">
-              <div className="categories">
+             {/* <div className="categories">
                 <ul>
                   <li className="active">Все</li>
                   <li>Мясные</li>
@@ -70,7 +75,14 @@ function App() {
                   <li>Острые</li>
                   <li>Закрытые</li>
                 </ul>
-              </div>
+              </div>*/}
+              <Categories onClick={(name)=>{console.log(name)}} items={[
+                'Мясные',
+                'Вегетарианская',
+                'Гриль',
+                'Острые',
+                'Закрытые',
+              ]}/>
               <div className="sort">
                 <div className="sort__label">
                   <svg

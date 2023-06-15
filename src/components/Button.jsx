@@ -11,11 +11,12 @@ import classNames from "classnames";
     }
 }*/
 
-function Button(props) {
+function Button({onClick,outline,children,className}) {
+
     return(
-        <button className={classNames('button',{
-            'button--outline':props.outline
-        })}>{props.children}</button>
+        <button onClick={onClick}  className={classNames('button',className,{
+            'button--outline':outline
+        })}>{children}</button>
     )
 
 }
