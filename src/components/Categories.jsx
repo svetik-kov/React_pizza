@@ -31,14 +31,15 @@ import React, {useState} from 'react';
 
 export const Categories = ({items,onClick}) => {
     const [activeItems,setActiveItems]=useState(null)
+    console.log('activeItems: ' + activeItems)
     const onSelectItem=(index)=>{
         setActiveItems(index)
     }
     return (
         <div className="categories">
             <ul>
-                <li >Все</li>
-                {items.map((name,index)=> (
+                <li className={activeItems===null?'active':''} onClick={()=>onSelectItem(null)} >Все</li>
+                {items && items.map((name,index)=> (
                     <li className={activeItems===index?'active':''}
                         key={`${name}_${index}`}
                         onClick={()=>onSelectItem(index)}
